@@ -1,0 +1,14 @@
+{
+  "name": "livecodebin",
+  "private": true,
+  "packageManager": "pnpm@12.18.0",
+  "scripts": {
+    "dev:server": "pnpm --filter @livecodebin/server dev",
+    "dev:web": "pnpm --filter @livecodebin/web dev",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

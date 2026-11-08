@@ -1,0 +1,100 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #17191e;
+  --color-text-muted: #6b6f7a;
+  --color-border: #e2e3e6;
+  --color-primary: #17191e;
+  --color-on-primary: #ffffff;
+  --color-accent: #6e56cf;
+  --color-danger: #cf222e;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0e0f12;
+    --color-text: #f7f7f8;
+    --color-text-muted: #9a9da6;
+    --color-border: #33363e;
+    --color-primary: #ffffff;
+    --color-on-primary: #17191e;
+    --color-accent: #9e8cfc;
+    /* Lighter than the light-mode red, which is too dark to read on this background. */
+    --color-danger: #f85149;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* So a class that sets `display` can never un-hide an element. */
+[hidden] {
+  display: none !important;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header img {
+  display: block;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.status {
+  text-align: center;
+}
+
+.greeting {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.muted {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.error {
+  margin: 0 0 16px;
+  color: var(--color-danger);
+}
+
+.button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
